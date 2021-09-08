@@ -8,3 +8,4 @@ file(GLOB_RECURSE LAB1_HEADERS "${CMAKE_CURRENT_LIST_DIR}/include/*.h")
 file(GLOB_RECURSE LAB1_SOURCE "${CMAKE_CURRENT_LIST_DIR}/src/*.cpp")
 
 add_executable(simulator ${LAB1_SOURCE} ${LAB1_HEADERS})
+target_include_directories(simulator PRIVATE "${CMAKE_CURRENT_LIST_DIR}/include")
