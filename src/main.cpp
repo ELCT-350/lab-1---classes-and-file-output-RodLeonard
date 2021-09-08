@@ -11,9 +11,9 @@ enum ErrorCodes
   Ok = 0
 };
 
-void printRectangle(const string& nameOfRect, const Rectangle& rect)
+void printArea(const string& name, const Shape& shape)
 {
-  cout << "Area of " << nameOfRect << ": " << rect.getArea() << endl;
+  cout << "Area of " << name << ": " << shape.getArea() << endl;
 }
 
 int main()
@@ -21,11 +21,11 @@ int main()
   Rectangle rect1(3,5);
   Rectangle rect2(2,8);
 
-  printRectangle("rect1", rect1);
-  printRectangle("rect2", rect2);
+  printArea("rect1", rect1);
+  printArea("rect2", rect2);
 
   Circle circle(3.5);
-  cout << "Area of circle: " << circle.getArea() << endl;
+  printArea("circle", circle);
 
   return Ok;
 }

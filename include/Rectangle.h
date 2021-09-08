@@ -1,8 +1,9 @@
 #pragma once
+#include "Shape.h"
 
 namespace ELCT350
 {
-  class Rectangle
+  class Rectangle : public Shape
   {
   public:
     Rectangle(double length, double width);
@@ -13,7 +14,7 @@ namespace ELCT350
     double getLength() const;
     double getWidth() const;
 
-    double getArea() const;
+    virtual double getArea() const override;
   private:
     double _length;
     double _width;
