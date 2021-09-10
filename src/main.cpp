@@ -16,6 +16,8 @@ enum ErrorCodes
 int main(int argc, char* argv[])
 {
   Vector<double> vector(3);
+  Vector<double> vector2(3);
+  Vector<double> sum = vector + vector2;
 
   try
   {

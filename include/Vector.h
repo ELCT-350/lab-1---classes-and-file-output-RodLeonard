@@ -28,6 +28,18 @@ namespace ELCT350
 
       return _data[index];
     }
+
+    Vector<T> operator+(const Vector<T>& rhs) const
+    {
+      if(_size != rhs._size)
+        throw std::out_of_range("rhs");
+
+      Vector<T> sum(_size);
+      for(size_t i = 0; i < _size; ++i)
+        sum[i] = _data[i] + rhs._data[i];
+
+      return sum;
+    }
     #pragma endregion
   private:
     #pragma region Variables
