@@ -9,26 +9,24 @@ using namespace ELCT350;
 
 enum ErrorCodes
 {
-  Ok = 0
+  Ok = 0,
+  ProblemAccessingArray = 1
 };
-
-void printArea(const string& name, const Shape& shape)
-{
-  cout << "Area of " << name << ": " << shape.getArea() << endl;
-}
 
 int main(int argc, char* argv[])
 {
   Vector<double> vector(3);
 
-  Rectangle rect1(3,5);
-  Rectangle rect2(2,8);
-
-  printArea("rect1", rect1);
-  printArea("rect2", rect2);
-
-  Circle circle(3.5);
-  printArea("circle", circle);
+  try
+  {
+    vector[1] = 5.0;
+    cout << "vector[0]: " << vector[1] << endl;
+  }
+  catch(...)
+  {
+    cerr << "Problem accessing array" << endl;
+    return ProblemAccessingArray;
+  }
 
   return Ok;
 }
